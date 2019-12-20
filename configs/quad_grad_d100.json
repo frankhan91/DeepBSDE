@@ -1,0 +1,21 @@
+{
+  "eqn_config": {
+    "_comment": "An example PDE with quadratically growing derivatives in Comm. Math. Stat. doi.org/10.1007/s40304-017-0117-6",
+    "eqn_name": "QuadraticGradient",
+    "total_time": 1.0,
+    "dim": 100,
+    "num_time_interval": 30
+  },
+  "net_config": {
+    "y_init_range": [2, 4],
+    "num_hiddens": [110, 110],
+    "lr_values": [5e-3, 5e-3],
+    "lr_boundaries": [2000],
+    "num_iterations": 4000,
+    "batch_size": 64,
+    "valid_size": 256,
+    "logging_frequency": 100,
+    "dtype": "float64",
+    "verbose": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "eqn_config": {
+    "_comment": "Nonlinear Black-Scholes equation with different interest rates for borrowing and lending in Comm. Math. Stat. doi.org/10.1007/s40304-017-0117-6",
+    "eqn_name": "PricingDiffRate",
+    "total_time": 0.5,
+    "dim": 100,
+    "num_time_interval": 20
+  },
+  "net_config": {
+    "y_init_range": [15, 18],
+    "num_hiddens": [110, 110],
+    "lr_values": [5e-3, 5e-3],
+    "lr_boundaries": [2000],
+    "num_iterations": 4000,
+    "batch_size": 64,
+    "valid_size": 256,
+    "logging_frequency": 100,
+    "dtype": "float64",
+    "verbose": true
+  }
+}
