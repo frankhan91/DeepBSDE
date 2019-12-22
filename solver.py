@@ -27,7 +27,7 @@ class BSDESolver(object):
         # begin sgd iteration
         for step in range(self.net_config.num_iterations+1):
             if step % self.net_config.logging_frequency == 0:
-                loss = self.loss(valid_data, training=False).numpy()
+                loss = self.loss_fn(valid_data, training=False).numpy()
                 y_init = self.y_init.numpy()[0]
                 elapsed_time = time.time() - start_time
                 training_history.append([step, loss, y_init, elapsed_time])
@@ -37,7 +37,7 @@ class BSDESolver(object):
             self.train_step(self.bsde.sample(self.net_config.batch_size))
         return np.array(training_history)
 
-    def loss(self, inputs, training):
+    def loss_fn(self, inputs, training):
         dw, x = inputs
         y_terminal = self.model(inputs, training)
         delta = y_terminal - self.bsde.g_tf(self.bsde.total_time, x[:, :, -1])
@@ -49,7 +49,7 @@ class BSDESolver(object):
 
     def grad(self, inputs, training):
         with tf.GradientTape(persistent=True) as tape:
-            loss = self.loss(inputs, training)
+            loss = self.loss_fn(inputs, training)
         grad = tape.gradient(loss, self.model.trainable_variables)
         del tape
         return grad
@@ -116,7 +116,7 @@ class FeedForwardSubNet(tf.keras.Model):
         self.dense_layers.append(tf.keras.layers.Dense(dim, activation=None))
 
     def call(self, x, training):
-        "bn -> (dense -> bn -> relu) * len(num_hiddens) -> dense -> bn"
+        """structure: bn -> (dense -> bn -> relu) * len(num_hiddens) -> dense -> bn"""
         x = self.bn_layers[0](x, training)
         for i in range(len(self.dense_layers) - 1):
             x = self.dense_layers[i](x)
