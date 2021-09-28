@@ -1,6 +1,5 @@
 import numpy as np
 import tensorflow as tf
-from scipy.stats import multivariate_normal as normal
 
 
 class Equation(object):
@@ -36,9 +35,7 @@ class HJBLQ(Equation):
         self.lambd = 1.0
 
     def sample(self, num_sample):
-        dw_sample = normal.rvs(size=[num_sample,
-                                     self.dim,
-                                     self.num_time_interval]) * self.sqrt_delta_t
+        dw_sample = np.random.normal(size=[num_sample, self.dim, self.num_time_interval]) * self.sqrt_delta_t
         x_sample = np.zeros([num_sample, self.dim, self.num_time_interval + 1])
         x_sample[:, :, 0] = np.ones([num_sample, self.dim]) * self.x_init
         for i in range(self.num_time_interval):
@@ -60,9 +57,7 @@ class AllenCahn(Equation):
         self.sigma = np.sqrt(2.0)
 
     def sample(self, num_sample):
-        dw_sample = normal.rvs(size=[num_sample,
-                                     self.dim,
-                                     self.num_time_interval]) * self.sqrt_delta_t
+        dw_sample = np.random.normal(size=[num_sample, self.dim, self.num_time_interval]) * self.sqrt_delta_t
         x_sample = np.zeros([num_sample, self.dim, self.num_time_interval + 1])
         x_sample[:, :, 0] = np.ones([num_sample, self.dim]) * self.x_init
         for i in range(self.num_time_interval):
@@ -95,9 +90,7 @@ class PricingDefaultRisk(Equation):
         self.slope = (self.gammah - self.gammal) / (self.vh - self.vl)
 
     def sample(self, num_sample):
-        dw_sample = normal.rvs(size=[num_sample,
-                                     self.dim,
-                                     self.num_time_interval]) * self.sqrt_delta_t
+        dw_sample = np.random.normal(size=[num_sample, self.dim, self.num_time_interval]) * self.sqrt_delta_t
         x_sample = np.zeros([num_sample, self.dim, self.num_time_interval + 1])
         x_sample[:, :, 0] = np.ones([num_sample, self.dim]) * self.x_init
         for i in range(self.num_time_interval):
@@ -129,9 +122,7 @@ class PricingDiffRate(Equation):
         self.alpha = 1.0 / self.dim
 
     def sample(self, num_sample):
-        dw_sample = normal.rvs(size=[num_sample,
-                                     self.dim,
-                                     self.num_time_interval]) * self.sqrt_delta_t
+        dw_sample = np.random.normal(size=[num_sample, self.dim, self.num_time_interval]) * self.sqrt_delta_t
         x_sample = np.zeros([num_sample, self.dim, self.num_time_interval + 1])
         x_sample[:, :, 0] = np.ones([num_sample, self.dim]) * self.x_init
         factor = np.exp((self.mu_bar-(self.sigma**2)/2)*self.delta_t)
@@ -161,9 +152,7 @@ class BurgersType(Equation):
         self.sigma = self.dim + 0.0
 
     def sample(self, num_sample):
-        dw_sample = normal.rvs(size=[num_sample,
-                                     self.dim,
-                                     self.num_time_interval]) * self.sqrt_delta_t
+        dw_sample = np.random.normal(size=[num_sample, self.dim, self.num_time_interval]) * self.sqrt_delta_t
         x_sample = np.zeros([num_sample, self.dim, self.num_time_interval + 1])
         x_sample[:, :, 0] = np.ones([num_sample, self.dim]) * self.x_init
         for i in range(self.num_time_interval):
@@ -190,9 +179,7 @@ class QuadraticGradient(Equation):
         self.y_init = np.sin(np.power(base, self.alpha))
 
     def sample(self, num_sample):
-        dw_sample = normal.rvs(size=[num_sample,
-                                     self.dim,
-                                     self.num_time_interval]) * self.sqrt_delta_t
+        dw_sample = np.random.normal(size=[num_sample, self.dim, self.num_time_interval]) * self.sqrt_delta_t
         x_sample = np.zeros([num_sample, self.dim, self.num_time_interval + 1])
         x_sample[:, :, 0] = np.ones([num_sample, self.dim]) * self.x_init
         for i in range(self.num_time_interval):
@@ -235,9 +222,7 @@ class ReactionDiffusion(Equation):
             -self.lambd * self.lambd * self.dim * self.total_time / 2)
 
     def sample(self, num_sample):
-        dw_sample = normal.rvs(size=[num_sample,
-                                     self.dim,
-                                     self.num_time_interval]) * self.sqrt_delta_t
+        dw_sample = np.random.normal(size=[num_sample, self.dim, self.num_time_interval]) * self.sqrt_delta_t
         x_sample = np.zeros([num_sample, self.dim, self.num_time_interval + 1])
         x_sample[:, :, 0] = np.ones([num_sample, self.dim]) * self.x_init
         for i in range(self.num_time_interval):
