@@ -43,7 +43,7 @@ class HJBLQ(Equation):
         return dw_sample, x_sample
 
     def f_tf(self, t, x, y, z):
-        return -self.lambd * tf.reduce_sum(tf.square(z), 1, keepdims=True)
+        return -self.lambd * tf.reduce_sum(tf.square(z), 1, keepdims=True) / 2
 
     def g_tf(self, t, x):
         return tf.math.log((1 + tf.reduce_sum(tf.square(x), 1, keepdims=True)) / 2)
