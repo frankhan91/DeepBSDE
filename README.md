@@ -1,6 +1,7 @@
 # [Deep BSDE Solver](https://doi.org/10.1073/pnas.1718942115) in TensorFlow (2.18)
 
-# a new version that support tensorflow 2.18 & keras 3 ！！！！！！！！
+# A new version that support Tensorflow 2.18 & keras 3 ！！！！！！！！
+The old verson only support Tensorflow 2.13 and keras 2 
 
 ## Training
 
