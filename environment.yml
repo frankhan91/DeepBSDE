@@ -1,11 +1,11 @@
 name: deepbsde
 dependencies:
-  - python=3.8
+  - python=3.11
   - numpy
   - scipy
   - matplotlib
   - jupyterlab
   - pip
   - pip:
-    - tensorflow==2.13
+    - tensorflow==2.18
     - munch
