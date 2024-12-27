@@ -1,4 +1,4 @@
-# [Deep BSDE Solver](https://doi.org/10.1073/pnas.1718942115) in TensorFlow (2.0)
+# [Deep BSDE Solver](https://doi.org/10.1073/pnas.1718942115) in TensorFlow (2.18)
 
 # a new version that support tensorflow 2.18 & keras 3 ！！！！！！！！
 
@@ -42,9 +42,8 @@ can be python operation. A proper config is needed as well.
 
 ## Dependencies
 
-* [TensorFlow >=2.0](https://www.tensorflow.org/)
+* [TensorFlow ==2.18](https://www.tensorflow.org/)
 
-Note: an old version of the deep BSDE solver compatiable with TensorFlow 1.12 and Python 2 can be found in the commit 9d4e332.
 
 ## Reference
 [1] Han, J., Jentzen, A., and E, W. Overcoming the curse of dimensionality: Solving high-dimensional partial differential equations using deep learning,
