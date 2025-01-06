@@ -7,5 +7,4 @@ dependencies:
   - jupyterlab
   - pip
   - pip:
-    - tensorflow==2.18
-    - munch
+    - tensorflow>=2.16
