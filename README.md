@@ -1,12 +1,7 @@
-# [Deep BSDE Solver](https://doi.org/10.1073/pnas.1718942115) in TensorFlow (2.0)
+# [Deep BSDE Solver](https://doi.org/10.1073/pnas.1718942115) in TensorFlow (2.18)
 
-## Quick Installation
-
-For a quick installation, you can create a conda environment for Python using the following command:
-
-```bash
-conda env create -f environment.yml
-```
+# A new version that support Tensorflow 2.18 & keras 3 ！！！！！！！！
+The old verson only support Tensorflow 2.13 and keras 2 
 
 ## Training
 
@@ -48,10 +43,7 @@ can be python operation. A proper config is needed as well.
 
 ## Dependencies
 
-Please be aware that the code may not be compatible with the latest version of TensorFlow.
-
-For those using older versions, a version of the deep BSDE solver that is compatible with TensorFlow 1.12 and Python 2 can be found in commit 9d4e332.
-
+* [TensorFlow ==2.18](https://www.tensorflow.org/)
 
 
 ## Reference
@@ -61,30 +53,4 @@ For those using older versions, a version of the deep BSDE solver that is compat
 <em>Communications in Mathematics and Statistics</em>, 5, 349–380 (2017). 
 [[journal]](https://doi.org/10.1007/s40304-017-0117-6) [[arXiv]](https://arxiv.org/abs/1706.04702)
 
-## Citation
-```bibtex
-@article{HanArnulfE2018solving,
-  title={Solving high-dimensional partial differential equations using deep learning},
-  author={Han, Jiequn and Jentzen, Arnulf and E, Weinan},
-  journal={Proceedings of the National Academy of Sciences},
-  volume={115},
-  number={34},
-  pages={8505--8510},
-  year={2018},
-  publisher={National Acad Sciences},
-  url={https://doi.org/10.1073/pnas.1718942115}
-}
-
-@article{EHanArnulf2017deep,
-  author={E, Weinan and Han, Jiequn and Jentzen, Arnulf},
-  title={Deep learning-based numerical methods for high-dimensional parabolic partial differential equations and backward stochastic differential equations},
-  journal={Communications in mathematics and statistics},
-  volume={5},
-  number={4},
-  pages={349--380},
-  year={2017},
-  publisher={Springer},
-  url={https://doi.org/10.1007/s40304-017-0117-6}
-}
-```
 
