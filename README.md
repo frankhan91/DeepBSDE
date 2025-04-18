@@ -57,6 +57,10 @@ For those using older versions
 * *a version of the Deep BSDE solver that is compatible with TensorFlow 1.12 and Python 2 can be found in commit [`9d4e332`](https://github.com/frankhan91/DeepBSDE/commit/9d4e3329613d7a2a1f389a0d4cc652e1c4606b86).
 
 
+## Related Implementations
+
+* [TorchBSDE-Package](https://github.com/Steve-Shao/TorchBSDE-Package): A nice PyTorch implementation of the Deep BSDE solver with some new feastures.
+
 
 ## Reference
 [1] Han, J., Jentzen, A., and E, W. Overcoming the curse of dimensionality: Solving high-dimensional partial differential equations using deep learning,
